@@ -1,0 +1,58 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.App {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f9ff; 
+  color: #333;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.input-field {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #c0d8f1; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e4a5ff; 
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #c1d9f7; 
+  border-radius: 5px;
+  width: 250px;
+  max-width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #4fa3f7;
+}
+
+h1 {
+  font-family: "Montserrat", serif;
+  color: #4fa3f7;
+  margin-bottom: 90px;
+}
