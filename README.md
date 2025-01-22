@@ -1,5 +1,9 @@
 # React + TypeScript + Vite
 
+Для запуска проекта необходимо использовать команду "npm run dev", она запустит команды "npm i && npm run start". 
+Прописать команду npm i && npm run start нельзя, так как терминал не воспринимает оператор && и выдает ошибку. 
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
