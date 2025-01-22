@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import InputField from './InputField';
+import TodoList from './TodoList';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+interface Task {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  const addTask = (taskText: string) => {
+    const newTask: Task = {
+      id: Date.now(),
+      text: taskText,
+      completed: false,
+    };
+    setTasks([...tasks, newTask]);
+  };
+
+  const toggleTaskCompletion = (taskId: number) => {
+    setTasks(tasks.map(task =>
+      task.id === taskId
+        ? { ...task, completed: !task.completed }
+        : task
+    ));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App">
+      <h1>Todo App</h1>
+      <InputField addTask={addTask} />
+      <TodoList tasks={tasks} toggleTaskCompletion={toggleTaskCompletion} />
+    </div>
+  );
+};
 
 export default App
