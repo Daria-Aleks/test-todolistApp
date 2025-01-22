@@ -7,7 +7,7 @@
     "dev": "npm i && npm run start",
     "start": "vite",
     "build": "tsc -b && vite build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --repo https://github.com/Daria-Aleks/test-todolistApp",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest"
